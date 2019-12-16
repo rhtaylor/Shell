@@ -1,0 +1,13 @@
+<% if @user.errors.any? %>
+<ul>
+<% @user.errors.full_messages.each do |message| %>
+<li><%= message %></li>
+<% end %>
+</ul>
+<% end %>
+<%= form_for @user do |f| %> 
+<h1>Name <%= f.text_field :name %> </h1>
+<h1>Email <%= f.text_field :email %></h1>
+<h1>Phone Number <%= f.text_field :phone_number%></h1>
+<%= f.submit %>
+<% end %>
